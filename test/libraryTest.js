@@ -42,3 +42,13 @@ describe("addSpaces",function(){
     deepEqual(addSpaces("i have a dog")," i have a dog ");
   });
 });
+
+describe("printBoard",function(){
+  it("should print 1*1 board",function(){
+    expexted_output = "";
+    expexted_output += "-----\n";
+    expexted_output += "|   |\n";
+    expexted_output += "-----";
+    deepEqual(printBoard(generateBoard(1," ")),expexted_output);
+  });
+});
