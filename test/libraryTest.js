@@ -12,4 +12,7 @@ describe("createArray",() => {
   it('should generate empty array',function(){
     deepEqual(createArray(0,""),[]);
   });
+  it('should generate single element array',function(){
+    deepEqual(createArray(1,"a"),["a"]);
+  });
 });
