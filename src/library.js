@@ -16,13 +16,14 @@ const addSpaces = function(text){
 
 const printBoard = function(board){
 	let length = board.length;
-  let dashline = createArray(length*4+1,"-").join("");
-  let lines = [];
-  let lineLength = 0;
+  let dashline = createArray(length*4+3,"-").join("");
+  let visual = "  |"+board.map((x,y) => y).map(addSpaces).join("|")+"|"
+  let lines = [visual];
+  let lineLength = 1;
   lines[lineLength++] = dashline;
 	for(let row =0;row < length;row++){
-    let column = board[row].map(addSpaces).join("|");
-    lines[lineLength++] = "|"+column+"|";
+    let column = row+" |"+board[row].map(addSpaces).join("|");
+    lines[lineLength++] = column+"|";
     lines[lineLength++] = dashline;
 	}
   return lines.join("\n");

@@ -46,20 +46,22 @@ describe("addSpaces",function(){
 describe("printBoard",function(){
   it("should print 1*1 board",function(){
     expected_output = "";
-    expected_output += "-----\n";
-    expected_output += "|   |\n";
-    expected_output += "-----";
+    expected_output += "  | 0 |\n";
+    expected_output += "-------\n";
+    expected_output += "0 |   |\n";
+    expected_output += "-------";
     deepEqual(printBoard(generateBoard(1," ")),expected_output);
   });
   it("should print n*n board", function(){
     expected_output = "";
-    expected_output += "-------------\n";
-    expected_output += "|   |   |   |\n";
-    expected_output += "-------------\n";
-    expected_output += "|   |   |   |\n";
-    expected_output += "-------------\n";
-    expected_output += "|   |   |   |\n";
-    expected_output += "-------------";
+    expected_output += "  | 0 | 1 | 2 |\n"
+    expected_output += "---------------\n";
+    expected_output += "0 |   |   |   |\n";
+    expected_output += "---------------\n";
+    expected_output += "1 |   |   |   |\n";
+    expected_output += "---------------\n";
+    expected_output += "2 |   |   |   |\n";
+    expected_output += "---------------";
     deepEqual(printBoard(generateBoard(3," ")),expected_output);
   });
 });
