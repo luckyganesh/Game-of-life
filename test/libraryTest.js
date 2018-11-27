@@ -24,5 +24,8 @@ describe('generateBoard',() => {
   it('should generate 1*1 board',function() {
     deepEqual(generateBoard(1," "),[[" "]]);
   });
+  it('should generate n*n board' , function(){
+    deepEqual(generateBoard(2," "),[[" "," "],[" "," "]]);
+  });
 });
 
