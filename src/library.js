@@ -14,18 +14,24 @@ const addSpaces = function(text){
   return " "+text+" ";
 }
 
+const checkCell = function(elem){
+  let alivecell = '\u25A0';
+  let deadcell = ' ';
+  return elem == 1 ? alivecell : deadcell;
+}
+
 const printBoard = function(board){
-	let length = board.length;
+  let length = board.length;
   let dashline = createArray(length*4+3,"-").join("");
   let visual = "  |"+board.map((x,y) => y).map(addSpaces).join("|")+"|"
   let lines = [visual];
   let lineLength = 1;
   lines[lineLength++] = dashline;
-	for(let row =0;row < length;row++){
-    let column = row+" |"+board[row].map(addSpaces).join("|");
+  for(let row =0;row < length;row++){
+    let column = row+" |"+board[row].map(checkCell).map(addSpaces).join("|");
     lines[lineLength++] = column+"|";
     lines[lineLength++] = dashline;
-	}
+  }
   return lines.join("\n");
 }
 
@@ -33,7 +39,7 @@ const startGame = function(length){
   if(length == "wrong input"){
     return length;
   }
-  let world = generateBoard(length," ");
+  let world = generateBoard(length,0);
   return printBoard(world);
 };
 
