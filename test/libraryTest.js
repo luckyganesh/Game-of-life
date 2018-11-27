@@ -19,3 +19,10 @@ describe("createArray",() => {
     deepEqual(createArray(3,0),[0,0,0]);
   });
 });
+
+describe('generateBoard',() => {
+  it('should generate 1*1 board',function() {
+    deepEqual(generateBoard(1," "),[[" "]]);
+  });
+});
+
