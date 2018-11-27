@@ -1,5 +1,7 @@
+const { startGame } = require("./src/library.js");
 const main = function(){
   let length = +process.argv[2] ||  "wrong input";
-  console.log(length);
+  let result = startGame(length);
+  console.log(result);
 }
 main();

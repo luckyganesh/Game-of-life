@@ -29,9 +29,18 @@ const printBoard = function(board){
   return lines.join("\n");
 }
 
+const startGame = function(length){
+  if(length == "wrong input"){
+    return length;
+  }
+  let world = generateBoard(length," ");
+  return printBoard(world);
+};
+
 module.exports = {
   createArray,
   generateBoard,
   addSpaces,
-  printBoard
+  printBoard,
+  startGame
 };
