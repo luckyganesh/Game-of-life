@@ -38,4 +38,7 @@ describe("addSpaces",function(){
   it("should add spaces around a word", function(){
     deepEqual(addSpaces("sai")," sai ");
   });
+  it("should add spaces around end of sentence", function(){
+    deepEqual(addSpaces("i have a dog")," i have a dog ");
+  });
 });
