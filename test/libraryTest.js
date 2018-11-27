@@ -35,4 +35,7 @@ describe("addSpaces",function(){
   it('should add spaces around single letter',function(){
     deepEqual(addSpaces("a")," a ");
   });
+  it("should add spaces around a word", function(){
+    deepEqual(addSpaces("sai")," sai ");
+  });
 });
