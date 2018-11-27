@@ -1,6 +1,8 @@
 const { 
   createArray,
-  generateBoard
+  generateBoard,
+  addSpaces,
+  printBoard
 } = require("../src/library.js");
 
 const { 
@@ -29,3 +31,8 @@ describe('generateBoard',() => {
   });
 });
 
+describe("addSpaces",function(){
+  it('should add spaces around single letter',function(){
+    deepEqual(addSpaces("a")," a ");
+  });
+});
