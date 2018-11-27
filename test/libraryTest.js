@@ -15,4 +15,7 @@ describe("createArray",() => {
   it('should generate single element array',function(){
     deepEqual(createArray(1,"a"),["a"]);
   });
+  it("should generate multiple element array", function(){
+    deepEqual(createArray(3,0),[0,0,0]);
+  });
 });
