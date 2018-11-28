@@ -23,6 +23,10 @@ const findNeighboursState = function(row,column,board){
   return cells;
 }
 
+const calulateAliveCells = function(row,column,board){
+  return findNeighboursState(row,column,board).reduce((x,y) => x+y ,0);
+}
+
 const createArray = function(length,filler){
   return new Array(length).fill(filler);
 }
