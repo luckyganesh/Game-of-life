@@ -72,4 +72,10 @@ describe("findNeighboursState",function(){
   it("should give states of neighbours", function(){
     deepEqual(findNeighboursState(0,0,generateBoard(1," ")),[]);
   });
+  it('should give states of neighbours of corners',function(){
+    board = generateBoard(5,0);
+    board[1][1] = 1;
+    board[2][1] = 1;
+    deepEqual(findNeighboursState(1,0,board),[0,0,1,0,1]);
   });
+});
