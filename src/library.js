@@ -13,14 +13,14 @@ const initialState = function(board){
 }
 
 const findNeighboursState = function(row,column,board){
-  mainRow = board[row]
-  topRow = board[row-1] || [];
-  bottomRow = board[row+1] || [];
-  cells = [topRow[column-1],topRow[column],topRow[column+1]];
-  cells.push(mainRow[column-1],mainRow[column+1])
-  cells.push(bottomRow[column-1],bottomRow[column],bottomRow[column+1])
-  cells = cells.filter((x) => x != undefined)
-  return cells
+  let  mainRow = board[row];
+  let topRow = board[row-1] || [];
+  let bottomRow = board[row+1] || [];
+  let cells = [topRow[column-1],topRow[column],topRow[column+1]];
+  cells.push(mainRow[column-1],mainRow[column+1]);
+  cells.push(bottomRow[column-1],bottomRow[column],bottomRow[column+1]);
+  cells = cells.filter((x) => x != undefined);
+  return cells;
 }
 
 const createArray = function(length,filler){
