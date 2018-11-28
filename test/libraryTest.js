@@ -67,26 +67,3 @@ describe("printBoard",function(){
   });
 });
 
-describe("startGame",function(){
-  it("should work for numbers as input",function(){
-    expected_output = "";
-    expected_output += "  | 0 |\n";
-    expected_output += "-------\n";
-    expected_output += "0 |   |\n";
-    expected_output += "-------";
-    deepEqual(startGame(1),expected_output);
-    expected_output = "";
-    expected_output += "  | 0 | 1 | 2 |\n"
-    expected_output += "---------------\n";
-    expected_output += "0 |   |   |   |\n";
-    expected_output += "---------------\n";
-    expected_output += "1 |   |   |   |\n";
-    expected_output += "---------------\n";
-    expected_output += "2 |   |   |   |\n";
-    expected_output += "---------------";
-    deepEqual(startGame(3),expected_output);
-  });
-  it("should give wrong input for non number input",function(){
-    deepEqual(startGame("wrong input"),"wrong input");
-  });
-});

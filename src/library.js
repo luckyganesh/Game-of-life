@@ -1,4 +1,16 @@
-const read = require("readline-sync").question;
+const readline = require("readline-sync").question;
+
+const initialState = function(board){
+  console.log("if you want to stop press 'n' and enter");
+  let place = readline("give input:");
+  if(place == "n"){
+    return board;
+  }
+  let splited = place.split("_").map((x) => +x);
+  board[splited[0]][splited[1]] = 1;
+  console.log(printBoard(board));
+  return board = initialState(board);
+}
 
 const createArray = function(length,filler){
   return new Array(length).fill(filler);
@@ -42,6 +54,8 @@ const startGame = function(length){
     return length;
   }
   let world = generateBoard(length,0);
+  console.log(printBoard(world));
+  world = initialState(world);
   return printBoard(world);
 };
 
