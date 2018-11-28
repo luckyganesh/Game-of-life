@@ -1,3 +1,5 @@
+const read = require("readline-sync").question;
+
 const createArray = function(length,filler){
   return new Array(length).fill(filler);
 }
