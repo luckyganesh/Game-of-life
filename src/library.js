@@ -28,10 +28,7 @@ const createArray = function(length,filler){
 }
 
 const generateBoard = function(length,filler){
-  let board =[];
-  for(let index = 0; index <length;index++){
-    board[index] = createArray(length,filler)
-  }
+  let board = createArray(length,length).map((x) =>createArray(x,filler));
   return board;
 }
 
