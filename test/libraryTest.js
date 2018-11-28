@@ -1,4 +1,5 @@
 const { 
+  findNeighboursState,
   startGame,
   createArray,
   generateBoard,
@@ -67,3 +68,8 @@ describe("printBoard",function(){
   });
 });
 
+describe("findNeighboursState",function(){
+  it("should give states of neighbours", function(){
+    deepEqual(findNeighboursState(0,0,generateBoard(1," ")),[]);
+  });
+  });

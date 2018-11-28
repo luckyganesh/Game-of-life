@@ -75,5 +75,6 @@ module.exports = {
   generateBoard,
   addSpaces,
   printBoard,
-  startGame
+  startGame,
+  findNeighboursState
 };
