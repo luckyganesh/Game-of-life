@@ -78,4 +78,11 @@ describe("findNeighboursState",function(){
     board[2][1] = 1;
     deepEqual(findNeighboursState(1,0,board),[0,0,1,0,1]);
   });
+  it('should give states of neighbours of middele cells',function(){
+    board = generateBoard(1,0);
+    board[0][1] = 1;
+    board[1][0] = 1;
+    board[1][2] = 1;
+    deepEqual(findNeighboursState(1,1,board),[0,1,0,1,0,1,0,0,0]);
+  });
 });
