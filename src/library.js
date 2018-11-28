@@ -47,14 +47,10 @@ const printBoard = function(board){
   let dashline = createArray(length*4+3,"-").join("");
   let visual = "  |"+board.map((x,y) => y).map(addSpaces).join("|")+"|"
   let lines = [visual];
-  let lineLength = 1;
-  lines[lineLength++] = dashline;
-  for(let row =0;row < length;row++){
-    let column = row+" |"+board[row].map(checkCell).map(addSpaces).join("|");
-    lines[lineLength++] = column+"|";
-    lines[lineLength++] = dashline;
-  }
-  return lines.join("\n");
+  lines.push(dashline);
+  let boardlines = board.map((x,row) => row+" |"+x.map(checkCell).map(addSpaces).join("|")+"|");
+  boardlines = boardlines.map((x) => x+"\n"+dashline);
+  return lines.concat(boardlines).join('\n');
 }
 
 const startGame = function(length){
