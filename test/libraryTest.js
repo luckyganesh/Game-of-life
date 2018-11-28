@@ -86,4 +86,7 @@ describe("startGame",function(){
     expected_output += "---------------";
     deepEqual(startGame(3),expected_output);
   });
+  it("should give wrong input for non number input",function(){
+    deepEqual(startGame("wrong input"),"wrong input");
+  });
 });
