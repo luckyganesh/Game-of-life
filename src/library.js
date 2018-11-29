@@ -23,7 +23,7 @@ const findNeighboursState = function(row,column,board){
   return cells;
 }
 
-const calulateAliveCells = function(row,column,board){
+const calculateAliveCells = function(row,column,board){
   return findNeighboursState(row,column,board).reduce((x,y) => x+y ,0);
 }
 
@@ -73,5 +73,7 @@ module.exports = {
   addSpaces,
   printBoard,
   startGame,
-  findNeighboursState
+  findNeighboursState,
+  checkCell,
+  calculateAliveCells
 };

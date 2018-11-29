@@ -1,4 +1,6 @@
 const { 
+  checkCell,
+  calculateAliveCells,
   findNeighboursState,
   startGame,
   createArray,
@@ -84,5 +86,30 @@ describe("findNeighboursState",function(){
              [1,0,1,1,1],
              [1,1,1,1,1]];
     deepEqual(findNeighboursState(1,1,board),[0,1,0,1,1,1,0,1]);
+  });
+});
+
+describe("checkCell",function(){
+  it("should print alive cell character when given one",function(){
+    let alive = "\u25A0";
+    deepEqual(checkCell(1),alive);
+  });
+  it("should print empty space when given zero",function(){
+    deepEqual(checkCell(0)," ");
+  });
+});
+
+describe("calculateAliveCells",function(){
+  describe("for no alive cells",function(){
+    it('should give zero', function(){
+      board = [[0,0,0],[0,0,0],[0,0,0]];
+      deepEqual(calculateAliveCells(1,1,board),0);
+    });
+  });
+  describe("for all neighbours alive",function(){
+    it('should give 8',function(){
+      board = generateBoard(3,1);
+      deepEqual(calculateAliveCells(1,1,board),8);
+    });
   });
 });
