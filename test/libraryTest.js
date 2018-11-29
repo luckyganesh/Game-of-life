@@ -1,7 +1,7 @@
 const { 
   checkCell,
   calculateAliveCells,
-  findNeighbStateOfAll,
+  calculAliveNeighbForAll,
   findNeighboursState,
   startGame,
   createArray,
@@ -115,14 +115,14 @@ describe("calculateAliveCells",function(){
   });
 });
 
-describe('findNeighbStateOfAll',function() {
+describe('calculAliveNeighbForAll',function() {
   it('should give empty array for 1*1 board',function(){
     board =[[1]];
-    deepEqual(findNeighbStateOfAll(board),[[[]]]);
+    deepEqual(calculAliveNeighbForAll(board),[[0]]);
   });
   it('should give the state of neighbouring cells for 2*2 board',function(){
     board = [[1,0],[0,1]];
-    deepEqual(findNeighbStateOfAll(board),[[[0,0,1],[1,0,1]],[[1,0,1],[1,0,0]]]);
+    deepEqual(calculAliveNeighbForAll(board),[[1,2],[2,1]]);
   });
 });
 

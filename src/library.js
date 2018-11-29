@@ -23,11 +23,11 @@ const findNeighboursState = function(row,column,board){
   return cells;
 }
 
-const findNeighbStateOfAll = function(board){
+const calculAliveNeighbForAll = function(board){
   let newBoard = board.slice(0);
   newBoard = newBoard.map((row,rowNo) => {
     return row.map((column,columnNo) => {
-      return findNeighboursState(rowNo,columnNo,board)
+      return calculateAliveCells(rowNo,columnNo,board)
     });
   });
   return newBoard;
@@ -85,6 +85,6 @@ module.exports = {
   startGame,
   findNeighboursState,
   checkCell,
-  findNeighbStateOfAll,
+  calculAliveNeighbForAll,
   calculateAliveCells
 };
