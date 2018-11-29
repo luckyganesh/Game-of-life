@@ -72,9 +72,9 @@ const checkCell = function(elem){
 }
 
 const printBoard = function(board){
-  let length = board.length;
+  let length = board[0].length;
   let dashline = createArray(length*4+3,"-").join("");
-  let visual = "  |"+board.map((x,y) => y).map(addSpaces).join("|")+"|"
+  let visual = "  |"+board[0].map((x,y) => y).map(addSpaces).join("|")+"|"
   let lines = [visual];
   lines.push(dashline);
   let boardlines = board.map((x,row) => row+" |"+x.map(checkCell).map(addSpaces).join("|")+"|");
@@ -82,11 +82,21 @@ const printBoard = function(board){
   return lines.concat(boardlines).join('\n');
 }
 
-const startGame = function(length){
-  if(length == "wrong input"){
-    return length;
+const getSize = function(){
+  console.log("give correct input only otherwise you will suffer");
+  let length = readline("give length of the board: ");
+  let breadth = readline("give breadth of the board: ");
+  if(length > 0 && breadth > 0){
+    return { length:+length , breadth:+breadth };
   }
-  let world = generateBoard(length,length,0);
+  console.log("wrong input");
+  return getSize();
+}
+
+const startGame = function(){
+  let size = getSize();
+  let { length ,breadth } = size;
+  let world = generateBoard(length,breadth,0);
   console.log(printBoard(world));
   world = initialState(world);
   return printBoard(newGeneration(world));
