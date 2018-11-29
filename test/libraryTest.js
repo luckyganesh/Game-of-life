@@ -154,4 +154,8 @@ describe('newGeneration',function() {
     let board = [[1,0],[0,1]];
     deepEqual(newGeneration(board),[[0,0],[0,0]])
   });
+  it('should not kill 2*2 board with live cells on all places',function(){
+    let board = [[1,1],[1,1]];
+    deepEqual(newGeneration(board),[[1,1],[1,1]]);
+  }); 
 });
