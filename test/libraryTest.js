@@ -28,10 +28,10 @@ describe("createArray",() => {
 
 describe('generateBoard',() => {
   it('should generate 1*1 board',function() {
-    deepEqual(generateBoard(1," "),[[" "]]);
+    deepEqual(generateBoard(1,1," "),[[" "]]);
   });
   it('should generate n*n board' , function(){
-    deepEqual(generateBoard(2," "),[[" "," "],[" "," "]]);
+    deepEqual(generateBoard(2,2," "),[[" "," "],[" "," "]]);
   });
 });
 
@@ -54,7 +54,7 @@ describe("printBoard",function(){
     expected_output += "-------\n";
     expected_output += "0 |   |\n";
     expected_output += "-------";
-    deepEqual(printBoard(generateBoard(1," ")),expected_output);
+    deepEqual(printBoard(generateBoard(1,1," ")),expected_output);
   });
   it("should print n*n board", function(){
     expected_output = "";
@@ -66,21 +66,21 @@ describe("printBoard",function(){
     expected_output += "---------------\n";
     expected_output += "2 |   |   |   |\n";
     expected_output += "---------------";
-    deepEqual(printBoard(generateBoard(3," ")),expected_output);
+    deepEqual(printBoard(generateBoard(3,3," ")),expected_output);
   });
 });
 
 describe("findNeighboursState",function(){
   it("should give states of neighbours", function(){
-    deepEqual(findNeighboursState(0,0,generateBoard(1," ")),[]);
+    deepEqual(findNeighboursState(0,0,generateBoard(1,1," ")),[]);
   });
   it('should give states of neighbours of corners',function(){
-    board = generateBoard(5,0);
+    board = generateBoard(5,5,0);
     board[1][1] = 1;
     board[2][1] = 1;
     deepEqual(findNeighboursState(1,0,board),[0,0,1,0,1]);
   });
-  it('should give states of neighbours of middele cells',function(){
+  it('should give states of neighbours of middle cells',function(){
     board = [[0,1,0,1,1],
              [1,1,1,0,0],
              [1,0,1,1,1],
@@ -108,7 +108,7 @@ describe("calculateAliveCells",function(){
   });
   describe("for all neighbours alive",function(){
     it('should give 8',function(){
-      board = generateBoard(3,1);
+      board = generateBoard(3,3,1);
       deepEqual(calculateAliveCells(1,1,board),8);
     });
   });

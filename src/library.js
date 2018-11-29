@@ -31,8 +31,8 @@ const createArray = function(length,filler){
   return new Array(length).fill(filler);
 }
 
-const generateBoard = function(length,filler){
-  let board = createArray(length,length).map((x) =>createArray(x,filler));
+const generateBoard = function(rows,columns,filler){
+  let board = createArray(rows,rows).map(() =>createArray(columns,filler));
   return board;
 }
 
