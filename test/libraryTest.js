@@ -1,4 +1,5 @@
 const { 
+  checkCellState,
   checkCell,
   calculateAliveCells,
   calculAliveNeighbForAll,
@@ -126,3 +127,8 @@ describe('calculAliveNeighbForAll',function() {
   });
 });
 
+describe("checkCellState",function(){
+  it('should return zero for zero',function(){
+    deepEqual(checkCellState(0,1),0);
+  });
+});

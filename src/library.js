@@ -33,6 +33,11 @@ const calculAliveNeighbForAll = function(board){
   return newBoard;
 }
 
+const checkCellState = function(noOfAlives,elem){
+  let result = [0,0,elem,1,0,0,0,0,0]
+  return result[noOfAlives];
+}
+
 const calculateAliveCells = function(row,column,board){
   return findNeighboursState(row,column,board).reduce((x,y) => x+y ,0);
 }
@@ -86,5 +91,6 @@ module.exports = {
   findNeighboursState,
   checkCell,
   calculAliveNeighbForAll,
+  checkCellState,
   calculateAliveCells
 };
