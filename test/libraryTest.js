@@ -1,4 +1,5 @@
 const { 
+  newGeneration,
   checkCellState,
   checkCell,
   calculateAliveCells,
@@ -142,5 +143,11 @@ describe("checkCellState",function(){
   });
   it('should return one for three when input is zero',function(){
     deepEqual(checkCellState(3,0),1);
+  });
+});
+
+describe('newGeneration',function() {
+  it('should kill 1*1 board cell',function(){
+    deepEqual(newGeneration([[1]]),[[0]]);
   });
 });

@@ -38,6 +38,16 @@ const checkCellState = function(noOfAlives,elem){
   return result[noOfAlives];
 }
 
+const newGeneration = function(board){
+  let newBoard = calculAliveNeighbForAll(board);
+  newBoard = newBoard.map((row,rowNo) => {
+    return row.map((column,columnNo) => {
+      return checkCell(column,board[rowNo][columnNo])
+    });
+  });
+  return newBoard;
+}
+
 const calculateAliveCells = function(row,column,board){
   return findNeighboursState(row,column,board).reduce((x,y) => x+y ,0);
 }
@@ -92,5 +102,6 @@ module.exports = {
   checkCell,
   calculAliveNeighbForAll,
   checkCellState,
-  calculateAliveCells
+  calculateAliveCells,
+  newGeneration
 };
