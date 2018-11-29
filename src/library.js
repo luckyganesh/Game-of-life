@@ -86,10 +86,10 @@ const startGame = function(length){
   if(length == "wrong input"){
     return length;
   }
-  let world = generateBoard(length,0);
+  let world = generateBoard(length,length,0);
   console.log(printBoard(world));
   world = initialState(world);
-  return printBoard(world);
+  return printBoard(newGeneration(world));
 };
 
 module.exports = {
