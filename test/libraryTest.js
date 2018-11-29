@@ -131,4 +131,16 @@ describe("checkCellState",function(){
   it('should return zero for zero',function(){
     deepEqual(checkCellState(0,1),0);
   });
+  it('should return zero for one',function(){
+    deepEqual(checkCellState(1,1),0);
+  });
+  it('should return element for two',function(){
+    deepEqual(checkCellState(2,1),1);
+  });
+  it('should return one for three',function(){
+    deepEqual(checkCellState(3,1),1);
+  });
+  it('should return one for three when input is zero',function(){
+    deepEqual(checkCellState(3,0),1);
+  });
 });
