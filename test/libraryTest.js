@@ -1,6 +1,7 @@
 const { 
   checkCell,
   calculateAliveCells,
+  findNeighbStateOfAll,
   findNeighboursState,
   startGame,
   createArray,
@@ -113,3 +114,15 @@ describe("calculateAliveCells",function(){
     });
   });
 });
+
+describe('findNeighbStateOfAll',function() {
+  it('should give empty array for 1*1 board',function(){
+    board =[[1]];
+    deepEqual(findNeighbStateOfAll(board),[[[]]]);
+  });
+  it('should give the state of neighbouring cells for 2*2 board',function(){
+    board = [[1,0],[0,1]];
+    deepEqual(findNeighbStateOfAll(board),[[[0,0,1],[1,0,1]],[[1,0,1],[1,0,0]]]);
+  });
+});
+
