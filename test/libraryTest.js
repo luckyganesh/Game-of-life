@@ -150,4 +150,8 @@ describe('newGeneration',function() {
   it('should kill 1*1 board cell',function(){
     deepEqual(newGeneration([[1]]),[[0]]);
   });
+  it("should kill 2*2 board with live cell on top left and bottom right",function(){
+    let board = [[1,0],[0,1]];
+    deepEqual(newGeneration(board),[[0,0],[0,0]])
+  });
 });

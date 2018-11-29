@@ -42,7 +42,7 @@ const newGeneration = function(board){
   let newBoard = calculAliveNeighbForAll(board);
   newBoard = newBoard.map((row,rowNo) => {
     return row.map((column,columnNo) => {
-      return checkCell(column,board[rowNo][columnNo])
+      return checkCellState(column,board[rowNo][columnNo])
     });
   });
   return newBoard;
